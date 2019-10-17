@@ -9,6 +9,6 @@ public class AiriportComparator extends WritableComparator {
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        return super.compare(a, b);
+        return a.compareTo(b);
     }
 }
