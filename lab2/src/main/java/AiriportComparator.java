@@ -1,4 +1,8 @@
-package PACKAGE_NAME;
+public class AiriportComparator extends WritableComparator{
 
-public class AiriportComparator {
+    public AiriportComparator() {
+
+    }
+
+
 }
