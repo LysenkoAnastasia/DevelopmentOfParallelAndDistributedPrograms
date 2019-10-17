@@ -1,9 +1,9 @@
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-public class AiriportComparator extends WritableComparator {
+public class AiroportComparator extends WritableComparator {
 
-    public AiriportComparator() {
+    public AiroportComparator() {
 
     }
 
