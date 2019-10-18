@@ -22,6 +22,6 @@ public class AiroportReducer extends Reducer<AiroportKey, Text, Text, Text> {
         }
 
         averageT = averageT/count;
-        context.write(key, new Text(" Average time = " + averageT + " Max time = " + maxT + " Min time" + minT));
+        context.write(key, new Text(" Average time = " + averageT + " Max time = " + maxT + " Min time = " + minT));
     }
 }
