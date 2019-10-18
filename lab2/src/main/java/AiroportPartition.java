@@ -4,8 +4,8 @@ import org.w3c.dom.Text;
 
 import java.security.Key;
 
-public class AiriportPartition  extends Partitioner<AiroportKey, Text> {
-    public AiriportPartition() { }
+public class AiroportPartition  extends Partitioner<AiroportKey, Text> {
+    public AiroportPartition() { }
 
     @Override
     public int getPartition(AiroportKey key, Text value, int numPeduceTasks) {
