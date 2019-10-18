@@ -9,6 +9,8 @@ public class AiroportComparator extends WritableComparator {
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        return a.compareTo(b);
+        AiroportKey a1 = (AiroportKey)a;
+        AiroportKey b1 = (AiroportKey)b;
+        return a1.getAiroportValue().compareTo(b1.getAiroportValue());
     }
 }

@@ -5,16 +5,16 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AiroportKey implements WritableComparable<AiroportKey> {
-    private String value;
+    private String airoportValue;
     private int num;
 
     public AiroportKey() {
-        this.value = value;
+        this.airoportValue = airoportValue;
         this.num = 0;
     }
 
     public AiroportKey(String value, int num) {
-        this.value = value;
+        this.airoportValue = value;
         this.num = num;
     }
 
@@ -25,13 +25,20 @@ public class AiroportKey implements WritableComparable<AiroportKey> {
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-        dataOutput.writeChars(value);
+        dataOutput.writeChars(airoportValue);
         dataOutput.writeInt(num);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-        value = dataInput.readLine();
+        airoportValue = dataInput.readLine();
         num = dataInput.readInt();
     }
+
+    public String getAiroportValue() {
+        return airoportValue;
+    }
+     public String getNum() {
+        return num;
+     }
 }
