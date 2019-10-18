@@ -1,17 +1,20 @@
 public class FlightParser {
     private String flightID;
-    private String flightName;
+    private Double delayTime = 0.0;
     public FlightParser(String str) {
         String[] words = str.split(",");
-        flightName = words[1];
-        flightID = words[0];
+        flightID = words[14];
+        if (words[18] != "") {
+            delayTime = new Double(words[18]);
+
+        }
     }
 
     public String getFlightID() {
         return flightID;
     }
 
-    public String getFlightName() {
-        return flightName;
+    public Double getDelayTime() {
+        return delayTime;
     }
 }

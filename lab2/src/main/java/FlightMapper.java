@@ -9,6 +9,9 @@ public class FlightMapper extends Mapper<LongWritable, Text, AiroportKey, Text> 
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         FlightParser flightParser = new FlightParser(value.toString());
 
-        context.write(new AiroportKey(flightParser.getFlightID(), 1), new Text(flightParser.getFlightName()));
+        Double delTime = flightParser.getDelayTime();
+        if (delTime >  0) {
+        context.write(new AiroportKey(flightParser.getFlightID(), 1), new Text(delTime.toString()));
+        }
     }
 }
