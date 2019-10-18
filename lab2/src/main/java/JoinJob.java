@@ -20,7 +20,7 @@ public class JoinJob {
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AiroportMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
-        job.setPartitionerClass(AiroportPartition.class);
+        job.setPartitionerClass(AiriportPartition.class);
         job.setGroupingComparatorClass(AiroportComparator.class);
         job.setReducerClass(JoinReducer.class);
         job.setMapOutputKeyClass(Text.class);
