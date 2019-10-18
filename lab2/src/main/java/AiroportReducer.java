@@ -10,16 +10,18 @@ public class AiroportReducer extends Reducer<AiroportKey, Text, Text, Text> {
     private Text result;
     public void reduce(AiroportKey key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         long count = 0;
-        Double time, minT, maxT, averageT;
+        Double time, minT = Double.MAX_VALUE, maxT = Double.MIN_VALUE, averageT = 0.0;
         Iterator<Text> iter = values.iterator();
         while(iter.hasNext()) {
             iter.next();
             String strTime  = iter.toString();
             time = new Double(strTime);
-            
-
+            maxT = Math.max(maxT, time);
+            minT  = Math.min(minT, time);
             count++;
         }
-        context.write(key, result);
+
+        averageT = averageT/count;
+        context.write(key, new );
     }
 }
