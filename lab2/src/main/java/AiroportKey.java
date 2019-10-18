@@ -5,8 +5,8 @@ import java.io.DataOutput;
 import java.io.IOException;
 
 public class AiroportKey implements WritableComparable<AiroportKey> {
-    public String value;
-    public int num;
+    private String value;
+    private int num;
 
     public AiroportKey() {
         this.value = value;
@@ -26,11 +26,13 @@ public class AiroportKey implements WritableComparable<AiroportKey> {
 
     @Override
     public void write(DataOutput dataOutput) throws IOException {
-
+        dataOutput.writeChars(value);
+        dataOutput.writeInt(num);
     }
 
     @Override
     public void readFields(DataInput dataInput) throws IOException {
-
+        value = dataInput.readLine();
+        num = dataInput.readInt();
     }
 }
