@@ -14,7 +14,7 @@ public class AiroportReducer extends Reducer<AiroportKey, Text, Text, Text> {
         while(iter.hasNext()) {
             iter.next();
             iter.toString();
-            
+
             count++;
         }
         context.write(key, result);
