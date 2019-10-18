@@ -5,7 +5,7 @@ public class AiroportPartition  extends Partitioner< AiroportKey,Text> {
 
 
     @Override
-    public int getPartition(AiroportKey airoportKey, Text text, int i) {
-        return 0;
+    public int getPartition(AiroportKey airoportKey, Text text, int numReduceTasks) {
+        return (airoportKey.hashCode() & Integer.MAX_VALUE) & numReduceTasks;
     }
 }
