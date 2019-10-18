@@ -4,8 +4,8 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
-public class AiroportMapper extends Mapper<LongWritable, Text, Text, Text> {
-    protected void map() throws IOException, InterruptedException {
+public class AiroportMapper extends Mapper<LongWritable, Text, AiroportKey, Text> {
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         
 
     }
