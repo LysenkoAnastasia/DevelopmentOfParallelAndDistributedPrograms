@@ -22,7 +22,7 @@ public class JoinJob {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setPartitionerClass(AiriportPartition.class);
         job.setGroupingComparatorClass(AiroportComparator.class);
-        job.setReducerClass(JoinReducer.class);
+        job.setReducerClass(AiroportReducer.class);
         job.setMapOutputKeyClass(Text.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
