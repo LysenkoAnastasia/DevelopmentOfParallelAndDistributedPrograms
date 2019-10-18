@@ -11,6 +11,6 @@ public class AiroportMapper extends Mapper<LongWritable, Text, AiroportKey, Text
         }
         AiroportParser airoportParser = new AiroportParser(value.toString());
 
-        context.write(new AiroportKey(airoportParser.getAiroportID(), 0), new Text(airoportParser.getAiroporName()));
+        context.write(new AiroportKey(airoportParser.getAiroportID(), "0"), new Text(airoportParser.getAiroporName()));
     }
 }

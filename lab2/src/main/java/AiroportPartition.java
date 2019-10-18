@@ -1,8 +1,5 @@
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
-import org.w3c.dom.Text;
-
-import java.security.Key;
 
 public class AiroportPartition  extends Partitioner<AiroportKey, Text> {
     public AiroportPartition() { }
