@@ -18,7 +18,6 @@ public class AiroportKey implements WritableComparable<AiroportKey> {
         this.num = num;
     }
 
-
     @Override
     public int compareTo(AiroportKey airoportKey) {
         return 0;
