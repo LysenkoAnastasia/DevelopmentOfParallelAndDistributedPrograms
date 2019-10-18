@@ -4,7 +4,6 @@ import org.apache.hadoop.io.WritableComparator;
 public class AiroportComparator extends WritableComparator {
 
     public AiroportComparator() {
-
     }
 
     @Override
