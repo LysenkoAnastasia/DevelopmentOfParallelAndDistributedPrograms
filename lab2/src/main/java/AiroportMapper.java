@@ -1,4 +1,3 @@
-
 import javafx.util.Pair;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
@@ -8,7 +7,7 @@ import java.io.IOException;
 public class AiroportMapper extends Mapper<LongWritable, Text, AiroportKey, Text> {
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
      AiroportParser airoportParser = new AiroportParser(value.toString());
-        Pair<String, String> pair;
-    context.write(new AiroportKey(), new Text());
+        Pair<String, String> pair = new ;
+    context.write(new AiroportKey(pair.getValue()), new Text());
     }
 }
