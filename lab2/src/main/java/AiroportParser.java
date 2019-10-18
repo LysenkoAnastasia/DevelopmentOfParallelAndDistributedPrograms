@@ -5,7 +5,7 @@ public class AiroportParser {
 
     }
 
-    public Pair getPair() {
-        return <ger>
+    public Pair<String, String> getPair() {
+        return <>;
     }
 }
