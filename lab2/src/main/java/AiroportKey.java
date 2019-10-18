@@ -39,7 +39,8 @@ public class AiroportKey extends Text implements WritableComparable<AiroportKey>
     public String getAiroportValue() {
         return airoportValue;
     }
-     public String getNum() {
+
+     public int getNum() {
         return num;
      }
 }
