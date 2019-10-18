@@ -7,6 +7,6 @@ import java.io.IOException;
 public class AiroportMapper extends Mapper<LongWritable, Text, AiroportKey, Text> {
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
      AiroportParser airoportParser = new AiroportParser(value.toString());
-     
+
     }
 }
