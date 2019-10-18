@@ -1,5 +1,9 @@
 import org.apache.hadoop.mapreduce.Mapper;
 
-public class AiroportMapper extends Mapper<> {
+import java.io.IOException;
 
+public class AiroportMapper extends Mapper<> {
+protected void map() throws IOException, InterruptedException {
+    
+}
 }
