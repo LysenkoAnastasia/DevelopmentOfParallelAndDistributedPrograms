@@ -1,3 +1,3 @@
-public class AiriportKey {
-    
+public class AiroportKey {
+
 }
