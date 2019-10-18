@@ -8,6 +8,6 @@ public class AiroportMapper extends Mapper<LongWritable, Text, AiroportKey, Text
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
      AiroportParser airoportParser = new AiroportParser(value.toString());
         Pair<String, String> pair = airoportParser.getClass();
-    context.write(new AiroportKey(pair.getValue()), new Text());
+    context.write(new AiroportKey(pair.getKey(), 0), new Text(pair.getValue()));
     }
 }
