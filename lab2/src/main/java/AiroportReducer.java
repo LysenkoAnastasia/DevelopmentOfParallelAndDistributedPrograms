@@ -2,11 +2,12 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Reducer;
 
-public class AiroportReducer extends Reducer<AiroportKey, Text, Text, Text> {
-    private AiroportKey result;
-    public void reduce(AiroportKey key, WritableComparable<AiroportKey> values, Context context) {
+import java.io.IOException;
 
+public class AiroportReducer extends Reducer<AiroportKey, Text, Text, Text> {
+    private Text result;
+    public void reduce(AiroportKey key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+        
         context.write(key, result);
     }
-
 }
