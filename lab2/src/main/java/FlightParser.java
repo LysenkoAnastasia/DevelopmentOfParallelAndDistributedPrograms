@@ -10,10 +10,12 @@ public class FlightParser {
         }
     }
 
+
     public String getFlightID() {
         return flightID;
     }
 
+    
     public Double getDelayTime() {
         return delayTime;
     }
