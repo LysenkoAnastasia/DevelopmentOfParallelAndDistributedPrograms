@@ -5,7 +5,7 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class AiroportKey extends Text implements WritableComparable<AiroportKey> {
+public class AiroportKey implements WritableComparable<AiroportKey> {
     private String airoportValue;
     private int num;
 
