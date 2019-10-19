@@ -21,8 +21,9 @@ public class AiroportKey implements WritableComparable<AiroportKey> {
 
     @Override
     public int compareTo(AiroportKey airoportKey) {
-
-        return 0;
+        Text thisAiroportValue = this.airoportValue;
+        Text thatAiroportValue = airoportKey.airoportValue;
+        return thatAiroportValue == thisAiroportValue ? 0 : 1;
     }
 
     @Override
