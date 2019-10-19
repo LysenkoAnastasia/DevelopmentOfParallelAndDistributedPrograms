@@ -1,3 +1,4 @@
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 
@@ -7,23 +8,25 @@ import java.io.IOException;
 
 public class AiroportKey implements WritableComparable<AiroportKey> {
     private Text airoportValue;
-    private Text num;
+    private IntWritable num;
 
     public AiroportKey() {
         this.airoportValue = new Text();
-        this.num = new Text();
+        this.num = new IntWritable();
     }
 
     public AiroportKey(String value, String num) {
         this.airoportValue = new Text(value);
-        this.num = new Text((num));
+        this.num = new IntWritable(Integer.parseInt(num));
     }
 
     @Override
     public int compareTo(AiroportKey airoportKey) {
-        Text thisAiroportValue = this.airoportValue;
-        Text thatAiroportValue = airoportKey.airoportValue;
-        return thatAiroportValue == thisAiroportValue ? 0 : 1;
+        int res  = this.airoportValue.compareTo(airoportKey.airoportValue);
+        if (res == 0) {
+            return this.num.compareTo(airoportKey.num);
+        }
+        return res;
     }
 
     @Override
