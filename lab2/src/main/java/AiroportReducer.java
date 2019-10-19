@@ -4,23 +4,24 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class AiroportReducer extends Reducer<AiroportKey, Text, Text, Text> {
-    private Text result;
-    public void reduce(AiroportKey key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+public class AiroportReducer extends Reducer<AirportKey, Text, Text, Text> {
+    public void reduce(AirportKey key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         long count = 0;
-        Double time, minT = Double.MAX_VALUE, maxT = Double.MIN_VALUE, averageT = 0.0;
+        long time, minT = Long.MAX_VALUE, maxT = Long.MIN_VALUE;
         Iterator<Text> iter = values.iterator();
+        String airportName = iter.next().toString();
         while(iter.hasNext()) {
-            result = iter.next();
             String strTime  = iter.toString();
-            time = new Double(strTime);
+            time = Long.parseLong(strTime);
             maxT = Math.max(maxT, time);
             minT  = Math.min(minT, time);
             count++;
+            iter.next();
         }
+        long averageT = 0;
         if (count > 0) {
             averageT = averageT / count;
         }
-        context.write(result, new Text(" Average time = " + averageT + " Max time = " + maxT + " Min time = " + minT));
+        context.write(new Text(airportName), new Text(" Average time = " + averageT + " Max time = " + maxT + " Min time = " + minT));
     }
 }

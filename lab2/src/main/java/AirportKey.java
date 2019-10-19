@@ -6,22 +6,22 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class AiroportKey implements WritableComparable<AiroportKey> {
+public class AirportKey implements WritableComparable<AirportKey> {
     private Text airoportValue;
     private IntWritable num;
 
-    public AiroportKey() {
+    public AirportKey() {
         this.airoportValue = new Text();
         this.num = new IntWritable();
     }
 
-    public AiroportKey(String value, String num) {
+    public AirportKey(String value, int num) {
         this.airoportValue = new Text(value);
-        this.num = new IntWritable(Integer.parseInt(num));
+        this.num = new IntWritable(num);
     }
 
     @Override
-    public int compareTo(AiroportKey airoportKey) {
+    public int compareTo(AirportKey airoportKey) {
         int res  = this.airoportValue.compareTo(airoportKey.airoportValue);
         if (res == 0) {
             return this.num.compareTo(airoportKey.num);
@@ -44,8 +44,4 @@ public class AiroportKey implements WritableComparable<AiroportKey> {
     public Text getAiroportValue() {
         return airoportValue;
     }
-
-     public Text getNum() {
-        return num;
-     }
 }

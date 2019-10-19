@@ -4,13 +4,13 @@ import org.apache.hadoop.io.WritableComparator;
 public class AiroportComparator extends WritableComparator {
 
     public AiroportComparator() {
-        super(AiroportKey.class, true);
+        super(AirportKey.class, true);
     }
 
     @Override
     public int compare(WritableComparable a, WritableComparable b) {
-        AiroportKey a1 = (AiroportKey)a;
-        AiroportKey b1 = (AiroportKey)b;
+        AirportKey a1 = (AirportKey)a;
+        AirportKey b1 = (AirportKey)b;
         return a1.getAiroportValue().compareTo(b1.getAiroportValue());
     }
 }
