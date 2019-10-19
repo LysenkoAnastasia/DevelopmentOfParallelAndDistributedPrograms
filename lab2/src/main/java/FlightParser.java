@@ -3,10 +3,9 @@ public class FlightParser {
     private long delayTime = 0;
     public FlightParser(String str) {
         String[] words = str.split(",");
-        flightID = words[14].replace("\"", "");
-        if (words[18] != "") {
-            delayTime = (long)Double.parseDouble(words[18]);
-
+        flightID = words[14];
+        if (!words[18].isEmpty()) {
+            delayTime = (long)Double.parseDouble(words[18].replace("\"", ""));
         }
     }
 
