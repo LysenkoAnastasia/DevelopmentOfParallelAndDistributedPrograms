@@ -11,16 +11,17 @@ public class AiroportReducer extends Reducer<AirportKey, Text, Text, Text> {
         Iterator<Text> iter = values.iterator();
         String airportName = iter.next().toString();
         while(iter.hasNext()) {
-            String strTime  = iter.toString();
+            String strTime  = iter.next().toString();
             time = Long.parseLong(strTime);
             maxT = Math.max(maxT, time);
             minT  = Math.min(minT, time);
             count++;
-            iter.next();
         }
         long averageT = 0;
         if (count > 0) {
             averageT = averageT / count;
+        } else if (count == 0) {
+            return;
         }
         context.write(new Text(airportName), new Text(" Average time = " + averageT + " Max time = " + maxT + " Min time = " + minT));
     }
