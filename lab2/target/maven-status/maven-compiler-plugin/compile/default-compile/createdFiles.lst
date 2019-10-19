@@ -1,9 +1,9 @@
 AiroportComparator.class
-AiroportParser.class
 AirportKey.class
+AirportParser.class
 FlightMapper.class
+AirportMapper.class
 FlightParser.class
-AiroportMapper.class
 JoinJob.class
-AiroportReducer.class
+AirportReducer.class
 AiroportPartition.class

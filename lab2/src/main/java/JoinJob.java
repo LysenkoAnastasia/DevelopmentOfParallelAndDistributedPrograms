@@ -17,14 +17,14 @@ public class JoinJob {
         Configuration conf = new Configuration();
         job.setJarByClass(JoinJob.class);
         job.setJobName("JoinJob sort");
-        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AiroportMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, AirportMapper.class);
         MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, FlightMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         Path outputPath = new Path(args[2]);
 
         job.setPartitionerClass(AiroportPartition.class);
         job.setGroupingComparatorClass(AiroportComparator.class);
-        job.setReducerClass(AiroportReducer.class);
+        job.setReducerClass(AirportReducer.class);
         job.setMapOutputKeyClass(AirportKey.class);
         job.setMapOutputValueClass(Text.class);
         job.setOutputKeyClass(Text.class);

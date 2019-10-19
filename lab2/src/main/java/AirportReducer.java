@@ -4,12 +4,14 @@ import org.apache.hadoop.mapreduce.Reducer;
 import java.io.IOException;
 import java.util.Iterator;
 
-public class AiroportReducer extends Reducer<AirportKey, Text, Text, Text> {
+public class AirportReducer extends Reducer<AirportKey, Text, Text, Text> {
     public void reduce(AirportKey key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         long count = 0;
         long time, minT = Long.MAX_VALUE, maxT = Long.MIN_VALUE;
         Iterator<Text> iter = values.iterator();
         String airportName = iter.next().toString();
+        airportName = key.getAiroportValue().toString();
+       // System.out.println(key.getAiroportValue() +"  ");
         long averageT = 0;
         while(iter.hasNext()) {
             String strTime  = iter.next().toString();

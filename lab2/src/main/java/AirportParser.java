@@ -1,9 +1,9 @@
 import javafx.util.Pair;
 
-public class AiroportParser {
+public class AirportParser {
     private String airoportID;
     private String airoporName;
-    public AiroportParser(String str) {
+    public AirportParser(String str) {
         String[] words = str.split(",[\"]");
         airoporName = words[1];
         airoportID = words[0];

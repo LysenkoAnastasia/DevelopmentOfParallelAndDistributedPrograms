@@ -1,9 +1,9 @@
-/home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AiroportParser.java
+/home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AirportParser.java
 /home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/FlightMapper.java
 /home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/FlightParser.java
 /home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AiroportComparator.java
+/home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AirportReducer.java
 /home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AiroportPartition.java
-/home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AiroportMapper.java
 /home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AirportKey.java
-/home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AiroportReducer.java
 /home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/JoinJob.java
+/home/anastasia/DevelopmentOfParallelAndDistributedPrograms/lab2/src/main/java/AirportMapper.java
