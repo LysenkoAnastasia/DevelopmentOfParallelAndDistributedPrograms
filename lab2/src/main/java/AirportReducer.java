@@ -11,7 +11,6 @@ public class AirportReducer extends Reducer<AirportKey, Text, Text, Text> {
         Iterator<Text> iter = values.iterator();
         String airportName = iter.next().toString();
         airportName = key.getAiroportValue().toString();
-       // System.out.println(key.getAiroportValue() +"  ");
         long averageT = 0;
         while(iter.hasNext()) {
             String strTime  = iter.next().toString();
