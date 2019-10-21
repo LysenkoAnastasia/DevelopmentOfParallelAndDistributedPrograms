@@ -5,8 +5,8 @@ public class AirportParser {
     private String airoporName;
     public AirportParser(String str) {
         String[] words = str.split(",[\"]");
-        airoportID = words[0];
-        airoporName = words[1];
+        airoportID = words[0].replace("\"", "");
+        airoporName = words[1].replace("\"", "");
     }
 
     public String getAiroportID() {
