@@ -1,3 +1,5 @@
+package ru.bmstu.hadoop.lab2;
+
 public class FlightParser {
     private String flightID;
     private long delayTime = 0;

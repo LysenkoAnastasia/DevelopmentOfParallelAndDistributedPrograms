@@ -1,8 +1,9 @@
-import javafx.util.Pair;
+package ru.bmstu.hadoop.lab2;
 
 public class AirportParser {
     private String airoportID;
     private String airoporName;
+
     public AirportParser(String str) {
         String[] words = str.split(",[\"]");
         airoportID = words[0].replace("\"", "");
