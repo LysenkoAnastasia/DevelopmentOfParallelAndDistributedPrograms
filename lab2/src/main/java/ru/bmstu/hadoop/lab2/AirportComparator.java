@@ -3,9 +3,9 @@ package ru.bmstu.hadoop.lab2;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-public class AiroportComparator extends WritableComparator {
+public class AirportComparator extends WritableComparator {
 
-    public AiroportComparator() {
+    public AirportComparator() {
 
         super(AirportKey.class, true);
     }

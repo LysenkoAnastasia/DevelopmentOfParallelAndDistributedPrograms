@@ -3,8 +3,8 @@ package ru.bmstu.hadoop.lab2;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;
 
-public class AiroportPartition  extends Partitioner<AirportKey, Text> {
-    public AiroportPartition() { }
+public class AirportPartition extends Partitioner<AirportKey, Text> {
+    public AirportPartition() { }
 
     @Override
     public int getPartition(AirportKey key, Text value, int numPeduceTasks) {

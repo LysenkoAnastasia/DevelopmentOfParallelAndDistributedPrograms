@@ -24,15 +24,14 @@ public class JoinJob {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         Path outputPath = new Path(args[2]);
 
-        job.setPartitionerClass(AiroportPartition.class);
-        job.setGroupingComparatorClass(AiroportComparator.class);
+        job.setPartitionerClass(AirportPartition.class);
+        job.setGroupingComparatorClass(AirportComparator.class);
         job.setReducerClass(AirportReducer.class);
         job.setMapOutputKeyClass(AirportKey.class);
         job.setMapOutputValueClass(Text.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(2);
-//        outputPath.getFileSystem(conf).delete(outputPath);
         outputPath.getFileSystem(conf);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
