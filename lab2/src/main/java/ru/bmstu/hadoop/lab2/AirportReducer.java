@@ -15,7 +15,6 @@ public class AirportReducer extends Reducer<AirportKey, Text, Text, Text> {
         long averageT = 0;
         while(iter.hasNext()) {
             String strTime  = iter.next().toString();
-            //System.out.println(strTime);
             time = Long.parseLong(strTime);
             maxT = Math.max(maxT, time);
             minT  = Math.min(minT, time);
